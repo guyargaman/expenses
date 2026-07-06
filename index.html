@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>◊î◊ï◊¶◊ê◊ï◊™ ◊û◊©◊ï◊™◊§◊ï◊™</title>
+<title>הוצאות משותפות</title>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -180,189 +180,189 @@ canvas{max-width:100%;}
 <!-- Header -->
 <div class="header">
   <div class="header-top">
-    <span class="header-title">üí∞ ◊î◊ï◊¶◊ê◊ï◊™ ◊û◊©◊ï◊™◊§◊ï◊™</span>
-    <span class="header-turn" id="turn-header">◊ò◊ï◊¢◊ü...</span>
+    <span class="header-title">💰 הוצאות משותפות</span>
+    <span class="header-turn" id="turn-header">טוען...</span>
   </div>
-  <div class="header-balance" id="header-balance">‚Ç™0.00</div>
-  <div class="header-sub">◊°◊î"◊õ ◊î◊ï◊¶◊ê◊ï◊™ ◊û◊©◊ï◊™◊§◊ï◊™</div>
+  <div class="header-balance" id="header-balance">₪0.00</div>
+  <div class="header-sub">סה"כ הוצאות משותפות</div>
   <div class="header-avatars">
     <div class="avatar-wrap">
-      <div class="avatar avatar-guy">◊í</div>
-      <div class="avatar-label">◊í◊ô◊ê</div>
-      <div class="avatar-amount" id="hdr-guy">‚Ç™0</div>
+      <div class="avatar avatar-guy">ג</div>
+      <div class="avatar-label">גיא</div>
+      <div class="avatar-amount" id="hdr-guy">₪0</div>
     </div>
     <div class="avatar-wrap">
-      <div class="avatar avatar-ben">◊ë</div>
-      <div class="avatar-label">◊ë◊ü</div>
-      <div class="avatar-amount" id="hdr-ben">‚Ç™0</div>
+      <div class="avatar avatar-ben">ב</div>
+      <div class="avatar-label">בן</div>
+      <div class="avatar-amount" id="hdr-ben">₪0</div>
     </div>
   </div>
 </div>
 
 <!-- Tabs -->
 <div class="tabs">
-  <div class="tab active" onclick="showPage('add',this)"><span class="ti">‚ûï</span>◊î◊ï◊°◊£<div class="tab-bar"></div></div>
-  <div class="tab" onclick="showPage('list',this)"><span class="ti">üìã</span>◊®◊©◊ô◊û◊î<div class="tab-bar"></div></div>
-  <div class="tab" onclick="showPage('balance',this)"><span class="ti">‚öñÔ∏è</span>◊ô◊™◊®◊î<div class="tab-bar"></div></div>
-  <div class="tab" onclick="showPage('stats',this)"><span class="ti">üìä</span>◊†◊ô◊™◊ï◊ó<div class="tab-bar"></div></div>
-  <div class="tab" onclick="showPage('savings',this)"><span class="ti">üéØ</span>◊ó◊ô◊°◊õ◊ï◊ü<div class="tab-bar"></div></div>
+  <div class="tab active" onclick="showPage('add',this)"><span class="ti">➕</span>הוסף<div class="tab-bar"></div></div>
+  <div class="tab" onclick="showPage('list',this)"><span class="ti">📋</span>רשימה<div class="tab-bar"></div></div>
+  <div class="tab" onclick="showPage('balance',this)"><span class="ti">⚖️</span>יתרה<div class="tab-bar"></div></div>
+  <div class="tab" onclick="showPage('stats',this)"><span class="ti">📊</span>ניתוח<div class="tab-bar"></div></div>
+  <div class="tab" onclick="showPage('savings',this)"><span class="ti">🎯</span>חיסכון<div class="tab-bar"></div></div>
 </div>
 
-<!-- ◊î◊ï◊°◊£ -->
+<!-- הוסף -->
 <div id="page-add" class="page active">
-  <div class="section-header">◊î◊ï◊¶◊ê◊î ◊ó◊ì◊©◊î</div>
+  <div class="section-header">הוצאה חדשה</div>
   <div class="card">
     <div class="fg">
-      <div class="fl">◊û◊ô ◊©◊ô◊ú◊ù?</div>
+      <div class="fl">מי שילם?</div>
       <div class="payer-toggle">
-        <button class="pb sel-guy" id="btn-guy" onclick="selectPayer('◊í◊ô◊ê')">üë® ◊í◊ô◊ê</button>
-        <button class="pb" id="btn-ben" onclick="selectPayer('◊ë◊ü')">üë¶ ◊ë◊ü</button>
+        <button class="pb sel-guy" id="btn-guy" onclick="selectPayer('גיא')">👨 גיא</button>
+        <button class="pb" id="btn-ben" onclick="selectPayer('בן')">👦 בן</button>
       </div>
     </div>
     <div class="fg">
-      <div class="fl">◊™◊ô◊ê◊ï◊®</div>
-      <input class="fi" type="text" id="inp-desc" placeholder="◊ú◊ì◊ï◊í◊û◊î: ◊ê◊®◊ï◊ó◊™ ◊¢◊®◊ë" />
+      <div class="fl">תיאור</div>
+      <input class="fi" type="text" id="inp-desc" placeholder="לדוגמה: ארוחת ערב" />
     </div>
     <div class="fg">
-      <div class="fl">◊°◊õ◊ï◊ù ◊ï◊û◊ò◊ë◊¢</div>
+      <div class="fl">סכום ומטבע</div>
       <div style="display:flex;gap:8px;">
         <input class="fi" type="number" id="inp-amount" placeholder="0.00" min="0" step="0.01" inputmode="decimal" style="flex:1" />
         <select class="fi" id="inp-currency" style="width:100px">
-          <option value="‚Ç™">‚Ç™ ◊©◊ß◊ú</option>
-          <option value="$">$ ◊ì◊ï◊ú◊®</option>
-          <option value="‚Ç¨">‚Ç¨ ◊ô◊ï◊®◊ï</option>
-          <option value="¬£">¬£ ◊§◊ê◊ï◊†◊ì</option>
-          <option value="‡∏ø">‡∏ø ◊ë◊ê◊ò</option>
-          <option value="¬•">¬• ◊ô◊ô◊ü</option>
+          <option value="₪">₪ שקל</option>
+          <option value="$">$ דולר</option>
+          <option value="€">€ יורו</option>
+          <option value="£">£ פאונד</option>
+          <option value="฿">฿ באט</option>
+          <option value="¥">¥ יין</option>
         </select>
       </div>
     </div>
     <div class="fg">
-      <div class="fl">◊§◊ô◊¶◊ï◊ú ◊¢◊ú◊ï◊ô◊ï◊™</div>
+      <div class="fl">פיצול עלויות</div>
       <div class="split-options">
-        <button class="split-btn active" onclick="selectSplit(50,this)">‚öñÔ∏è 50/50</button>
+        <button class="split-btn active" onclick="selectSplit(50,this)">⚖️ 50/50</button>
         <button class="split-btn" onclick="selectSplit(60,this)">60/40</button>
         <button class="split-btn" onclick="selectSplit(70,this)">70/30</button>
-        <button class="split-btn" onclick="selectSplit(100,this)">üë§ ◊õ◊ú ◊ê◊ó◊ì ◊ú◊ë◊ì</button>
+        <button class="split-btn" onclick="selectSplit(100,this)">👤 כל אחד לבד</button>
       </div>
     </div>
     <div class="fg">
-      <div class="fl">◊ß◊ò◊í◊ï◊®◊ô◊î</div>
+      <div class="fl">קטגוריה</div>
       <select class="fi" id="inp-cat">
-        <option value="◊ê◊ï◊õ◊ú">üçΩÔ∏è ◊ê◊ï◊õ◊ú</option>
-        <option value="◊™◊ó◊ë◊ï◊®◊î">üöó ◊™◊ó◊ë◊ï◊®◊î</option>
-        <option value="◊ë◊ô◊ú◊ï◊ô">üéâ ◊ë◊ô◊ú◊ï◊ô</option>
-        <option value="◊ß◊†◊ô◊ï◊™">üõí ◊ß◊†◊ô◊ï◊™</option>
-        <option value="◊ú◊ô◊†◊î">üè® ◊ú◊ô◊†◊î</option>
-        <option value="◊ë◊®◊ô◊ê◊ï◊™">üíä ◊ë◊®◊ô◊ê◊ï◊™</option>
-        <option value="◊†◊°◊ô◊¢◊ï◊™">‚úàÔ∏è ◊†◊°◊ô◊¢◊ï◊™</option>
-        <option value="◊ê◊ó◊®">üì¶ ◊ê◊ó◊®</option>
+        <option value="אוכל">🍽️ אוכל</option>
+        <option value="תחבורה">🚗 תחבורה</option>
+        <option value="בילוי">🎉 בילוי</option>
+        <option value="קניות">🛒 קניות</option>
+        <option value="לינה">🏨 לינה</option>
+        <option value="בריאות">💊 בריאות</option>
+        <option value="נסיעות">✈️ נסיעות</option>
+        <option value="אחר">📦 אחר</option>
       </select>
     </div>
     <div class="fg">
-      <div class="fl">◊™◊ê◊®◊ô◊ö</div>
+      <div class="fl">תאריך</div>
       <input class="fi" type="date" id="inp-date" />
     </div>
     <div class="fg" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg);border-radius:12px;">
       <input type="checkbox" id="inp-recurring" style="width:18px;height:18px;cursor:pointer;accent-color:var(--p1);" />
-      <label for="inp-recurring" style="font-size:14px;color:var(--sub);cursor:pointer;font-weight:500;">üîÑ ◊î◊ï◊¶◊ê◊î ◊ó◊ï◊ñ◊®◊™ (◊õ◊ú ◊ó◊ï◊ì◊©)</label>
+      <label for="inp-recurring" style="font-size:14px;color:var(--sub);cursor:pointer;font-weight:500;">🔄 הוצאה חוזרת (כל חודש)</label>
     </div>
-    <button class="btn-p" id="add-btn" onclick="addExpense()">◊î◊ï◊°◊£ ◊î◊ï◊¶◊ê◊î ‚úì</button>
+    <button class="btn-p" id="add-btn" onclick="addExpense()">הוסף הוצאה ✓</button>
   </div>
 </div>
 
-<!-- ◊®◊©◊ô◊û◊î -->
+<!-- רשימה -->
 <div id="page-list" class="page">
-  <div class="section-header">◊õ◊ú ◊î◊î◊ï◊¶◊ê◊ï◊™</div>
-  <button class="btn-s" onclick="exportCSV()">üì• ◊ô◊ô◊¶◊ï◊ê ◊ú◊ê◊ß◊°◊ú (CSV)</button>
+  <div class="section-header">כל ההוצאות</div>
+  <button class="btn-s" onclick="exportCSV()">📥 ייצוא לאקסל (CSV)</button>
   <div class="search-bar">
-    <input class="search-input" type="text" id="search-inp" placeholder="üîç ◊ó◊ô◊§◊ï◊©..." oninput="filterExpenses()" />
+    <input class="search-input" type="text" id="search-inp" placeholder="🔍 חיפוש..." oninput="filterExpenses()" />
     <select class="filter-select" id="filter-cat" onchange="filterExpenses()">
-      <option value="">◊î◊õ◊ú</option>
-      <option value="◊ê◊ï◊õ◊ú">üçΩÔ∏è ◊ê◊ï◊õ◊ú</option>
-      <option value="◊™◊ó◊ë◊ï◊®◊î">üöó ◊™◊ó◊ë◊ï◊®◊î</option>
-      <option value="◊ë◊ô◊ú◊ï◊ô">üéâ ◊ë◊ô◊ú◊ï◊ô</option>
-      <option value="◊ß◊†◊ô◊ï◊™">üõí ◊ß◊†◊ô◊ï◊™</option>
-      <option value="◊ú◊ô◊†◊î">üè® ◊ú◊ô◊†◊î</option>
-      <option value="◊ë◊®◊ô◊ê◊ï◊™">üíä ◊ë◊®◊ô◊ê◊ï◊™</option>
-      <option value="◊†◊°◊ô◊¢◊ï◊™">‚úàÔ∏è ◊†◊°◊ô◊¢◊ï◊™</option>
-      <option value="◊ê◊ó◊®">üì¶ ◊ê◊ó◊®</option>
+      <option value="">הכל</option>
+      <option value="אוכל">🍽️ אוכל</option>
+      <option value="תחבורה">🚗 תחבורה</option>
+      <option value="בילוי">🎉 בילוי</option>
+      <option value="קניות">🛒 קניות</option>
+      <option value="לינה">🏨 לינה</option>
+      <option value="בריאות">💊 בריאות</option>
+      <option value="נסיעות">✈️ נסיעות</option>
+      <option value="אחר">📦 אחר</option>
     </select>
   </div>
-  <div class="card" id="expenses-list"><div class="loading">◊ò◊ï◊¢◊ü...</div></div>
+  <div class="card" id="expenses-list"><div class="loading">טוען...</div></div>
 </div>
 
-<!-- ◊ô◊™◊®◊î -->
+<!-- יתרה -->
 <div id="page-balance" class="page">
-  <div class="section-header">◊ô◊™◊®◊î</div>
-  <div id="balance-display"><div class="loading">◊ò◊ï◊¢◊ü...</div></div>
+  <div class="section-header">יתרה</div>
+  <div id="balance-display"><div class="loading">טוען...</div></div>
 </div>
 
-<!-- ◊†◊ô◊™◊ï◊ó -->
+<!-- ניתוח -->
 <div id="page-stats" class="page">
-  <div class="section-header">◊†◊ô◊™◊ï◊ó ◊î◊ï◊¶◊ê◊ï◊™</div>
-  <div class="card"><div class="card-title">◊î◊ï◊¶◊ê◊ï◊™ ◊ú◊§◊ô ◊ó◊ï◊ì◊©</div><canvas id="chart-monthly"></canvas></div>
-  <div class="card"><div class="card-title">◊ú◊§◊ô ◊ß◊ò◊í◊ï◊®◊ô◊î</div><canvas id="chart-category"></canvas></div>
-  <div class="card"><div class="card-title">◊™◊ï◊ë◊†◊ï◊™ ◊ó◊õ◊û◊ï◊™</div><div id="insights-content"><div class="loading">◊ò◊ï◊¢◊ü...</div></div></div>
+  <div class="section-header">ניתוח הוצאות</div>
+  <div class="card"><div class="card-title">הוצאות לפי חודש</div><canvas id="chart-monthly"></canvas></div>
+  <div class="card"><div class="card-title">לפי קטגוריה</div><canvas id="chart-category"></canvas></div>
+  <div class="card"><div class="card-title">תובנות חכמות</div><div id="insights-content"><div class="loading">טוען...</div></div></div>
 </div>
 
-<!-- ◊ó◊ô◊°◊õ◊ï◊ü -->
+<!-- חיסכון -->
 <div id="page-savings" class="page">
-  <div class="section-header">◊ô◊¢◊ì ◊ó◊ô◊°◊õ◊ï◊ü</div>
+  <div class="section-header">יעד חיסכון</div>
   <div class="card">
-    <div class="fg"><div class="fl">◊©◊ù ◊î◊ô◊¢◊ì</div><input class="fi" type="text" id="goal-name" placeholder="◊ú◊ì◊ï◊í◊û◊î: ◊ò◊ô◊ï◊ú ◊ú◊ô◊§◊ü üóæ" /></div>
-    <div class="fg"><div class="fl">◊°◊õ◊ï◊ù ◊ô◊¢◊ì (‚Ç™)</div><input class="fi" type="number" id="goal-target" placeholder="5000" inputmode="numeric" /></div>
-    <div class="fg"><div class="fl">◊õ◊ë◊® ◊ó◊°◊õ◊†◊ï (‚Ç™)</div><input class="fi" type="number" id="goal-saved" placeholder="0" inputmode="numeric" /></div>
-    <button class="btn-p" onclick="saveSavingsGoal()">◊©◊û◊ï◊® ◊ô◊¢◊ì</button>
+    <div class="fg"><div class="fl">שם היעד</div><input class="fi" type="text" id="goal-name" placeholder="לדוגמה: טיול ליפן 🗾" /></div>
+    <div class="fg"><div class="fl">סכום יעד (₪)</div><input class="fi" type="number" id="goal-target" placeholder="5000" inputmode="numeric" /></div>
+    <div class="fg"><div class="fl">כבר חסכנו (₪)</div><input class="fi" type="number" id="goal-saved" placeholder="0" inputmode="numeric" /></div>
+    <button class="btn-p" onclick="saveSavingsGoal()">שמור יעד</button>
   </div>
   <div id="savings-display"></div>
-  <div class="section-header" style="margin-top:4px">◊î◊ï◊¶◊ê◊ï◊™ ◊ó◊ï◊ñ◊®◊ï◊™</div>
-  <div class="card" id="recurring-list"><div class="loading">◊ò◊ï◊¢◊ü...</div></div>
+  <div class="section-header" style="margin-top:4px">הוצאות חוזרות</div>
+  <div class="card" id="recurring-list"><div class="loading">טוען...</div></div>
 </div>
 
 <!-- Edit Modal -->
 <div class="modal-overlay" id="edit-modal" onclick="modalOutside(event)">
   <div class="modal">
     <div class="modal-header">
-      <div class="modal-title">‚úèÔ∏è ◊¢◊®◊ô◊õ◊™ ◊î◊ï◊¶◊ê◊î</div>
-      <button class="modal-close" onclick="closeEdit()">‚úï</button>
+      <div class="modal-title">✏️ עריכת הוצאה</div>
+      <button class="modal-close" onclick="closeEdit()">✕</button>
     </div>
     <input type="hidden" id="edit-id" />
-    <div class="fg"><div class="fl">◊™◊ô◊ê◊ï◊®</div><input class="fi" type="text" id="edit-desc" /></div>
+    <div class="fg"><div class="fl">תיאור</div><input class="fi" type="text" id="edit-desc" /></div>
     <div class="fg">
-      <div class="fl">◊°◊õ◊ï◊ù</div>
+      <div class="fl">סכום</div>
       <div style="display:flex;gap:8px;">
         <input class="fi" type="number" id="edit-amount" style="flex:1" />
         <select class="fi" id="edit-currency" style="width:100px">
-          <option value="‚Ç™">‚Ç™ ◊©◊ß◊ú</option>
-          <option value="$">$ ◊ì◊ï◊ú◊®</option>
-          <option value="‚Ç¨">‚Ç¨ ◊ô◊ï◊®◊ï</option>
-          <option value="¬£">¬£ ◊§◊ê◊ï◊†◊ì</option>
-          <option value="‡∏ø">‡∏ø ◊ë◊ê◊ò</option>
-          <option value="¬•">¬• ◊ô◊ô◊ü</option>
+          <option value="₪">₪ שקל</option>
+          <option value="$">$ דולר</option>
+          <option value="€">€ יורו</option>
+          <option value="£">£ פאונד</option>
+          <option value="฿">฿ באט</option>
+          <option value="¥">¥ יין</option>
         </select>
       </div>
     </div>
-    <div class="fg"><div class="fl">◊û◊ô ◊©◊ô◊ú◊ù</div>
+    <div class="fg"><div class="fl">מי שילם</div>
       <div class="payer-toggle">
-        <button class="pb" id="edit-btn-guy" onclick="selectEditPayer('◊í◊ô◊ê')">üë® ◊í◊ô◊ê</button>
-        <button class="pb" id="edit-btn-ben" onclick="selectEditPayer('◊ë◊ü')">üë¶ ◊ë◊ü</button>
+        <button class="pb" id="edit-btn-guy" onclick="selectEditPayer('גיא')">👨 גיא</button>
+        <button class="pb" id="edit-btn-ben" onclick="selectEditPayer('בן')">👦 בן</button>
       </div>
     </div>
-    <div class="fg"><div class="fl">◊ß◊ò◊í◊ï◊®◊ô◊î</div>
+    <div class="fg"><div class="fl">קטגוריה</div>
       <select class="fi" id="edit-cat">
-        <option value="◊ê◊ï◊õ◊ú">üçΩÔ∏è ◊ê◊ï◊õ◊ú</option>
-        <option value="◊™◊ó◊ë◊ï◊®◊î">üöó ◊™◊ó◊ë◊ï◊®◊î</option>
-        <option value="◊ë◊ô◊ú◊ï◊ô">üéâ ◊ë◊ô◊ú◊ï◊ô</option>
-        <option value="◊ß◊†◊ô◊ï◊™">üõí ◊ß◊†◊ô◊ï◊™</option>
-        <option value="◊ú◊ô◊†◊î">üè® ◊ú◊ô◊†◊î</option>
-        <option value="◊ë◊®◊ô◊ê◊ï◊™">üíä ◊ë◊®◊ô◊ê◊ï◊™</option>
-        <option value="◊†◊°◊ô◊¢◊ï◊™">‚úàÔ∏è ◊†◊°◊ô◊¢◊ï◊™</option>
-        <option value="◊ê◊ó◊®">üì¶ ◊ê◊ó◊®</option>
+        <option value="אוכל">🍽️ אוכל</option>
+        <option value="תחבורה">🚗 תחבורה</option>
+        <option value="בילוי">🎉 בילוי</option>
+        <option value="קניות">🛒 קניות</option>
+        <option value="לינה">🏨 לינה</option>
+        <option value="בריאות">💊 בריאות</option>
+        <option value="נסיעות">✈️ נסיעות</option>
+        <option value="אחר">📦 אחר</option>
       </select>
     </div>
-    <div class="fg"><div class="fl">◊™◊ê◊®◊ô◊ö</div><input class="fi" type="date" id="edit-date" /></div>
-    <button class="btn-p" onclick="saveEdit()">◊©◊û◊ï◊® ◊©◊ô◊†◊ï◊ô◊ô◊ù</button>
+    <div class="fg"><div class="fl">תאריך</div><input class="fi" type="date" id="edit-date" /></div>
+    <button class="btn-p" onclick="saveEdit()">שמור שינויים</button>
   </div>
 </div>
 
@@ -370,9 +370,9 @@ canvas{max-width:100%;}
 const SUPABASE_URL='https://wanmbztphilocjnotoxu.supabase.co';
 const SUPABASE_KEY='sb_publishable_eFgft39wT6XWF0itNnCItQ_RNmLa7DG';
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-const CAT_ICONS={◊ê◊ï◊õ◊ú:'üçΩÔ∏è',◊™◊ó◊ë◊ï◊®◊î:'üöó',◊ë◊ô◊ú◊ï◊ô:'üéâ',◊ß◊†◊ô◊ï◊™:'üõí',◊ú◊ô◊†◊î:'üè®',◊ë◊®◊ô◊ê◊ï◊™:'üíä',◊†◊°◊ô◊¢◊ï◊™:'‚úàÔ∏è',◊ê◊ó◊®:'üì¶'};
+const CAT_ICONS={אוכל:'🍽️',תחבורה:'🚗',בילוי:'🎉',קניות:'🛒',לינה:'🏨',בריאות:'💊',נסיעות:'✈️',אחר:'📦'};
 
-let selectedPayer='◊í◊ô◊ê', selectedSplit=50, editPayer='◊í◊ô◊ê';
+let selectedPayer='גיא', selectedSplit=50, editPayer='גיא';
 let allExpenses=[], filteredExpenses=[];
 let monthlyChart=null, categoryChart=null;
 
@@ -393,21 +393,21 @@ async function loadHeaderData(){
   const{data}=await sb.from('expenses').select('amount,paid_by,currency');
   const d=data||[];
   const total=d.reduce((s,e)=>s+Number(e.amount),0);
-  const guyPaid=d.filter(e=>e.paid_by==='◊í◊ô◊ê').reduce((s,e)=>s+Number(e.amount),0);
-  const benPaid=d.filter(e=>e.paid_by==='◊ë◊ü').reduce((s,e)=>s+Number(e.amount),0);
-  document.getElementById('header-balance').textContent='‚Ç™'+total.toFixed(2);
-  document.getElementById('hdr-guy').textContent='◊©◊ô◊ú◊ù ‚Ç™'+guyPaid.toFixed(0);
-  document.getElementById('hdr-ben').textContent='◊©◊ô◊ú◊ù ‚Ç™'+benPaid.toFixed(0);
+  const guyPaid=d.filter(e=>e.paid_by==='גיא').reduce((s,e)=>s+Number(e.amount),0);
+  const benPaid=d.filter(e=>e.paid_by==='בן').reduce((s,e)=>s+Number(e.amount),0);
+  document.getElementById('header-balance').textContent='₪'+total.toFixed(2);
+  document.getElementById('hdr-guy').textContent='שילם ₪'+guyPaid.toFixed(0);
+  document.getElementById('hdr-ben').textContent='שילם ₪'+benPaid.toFixed(0);
   // turn
   const{data:last}=await sb.from('expenses').select('paid_by').order('created_at',{ascending:false}).limit(1);
-  if(last?.length) document.getElementById('turn-header').textContent='◊™◊ï◊® '+(last[0].paid_by==='◊í◊ô◊ê'?'◊ë◊ü':'◊í◊ô◊ê');
-  else document.getElementById('turn-header').textContent='◊™◊ï◊® ◊í◊ô◊ê';
+  if(last?.length) document.getElementById('turn-header').textContent='תור '+(last[0].paid_by==='גיא'?'בן':'גיא');
+  else document.getElementById('turn-header').textContent='תור גיא';
 }
 
 function selectPayer(name){
   selectedPayer=name;
-  document.getElementById('btn-guy').className='pb'+(name==='◊í◊ô◊ê'?' sel-guy':'');
-  document.getElementById('btn-ben').className='pb'+(name==='◊ë◊ü'?' sel-ben':'');
+  document.getElementById('btn-guy').className='pb'+(name==='גיא'?' sel-guy':'');
+  document.getElementById('btn-ben').className='pb'+(name==='בן'?' sel-ben':'');
 }
 
 function selectSplit(val,el){
@@ -427,7 +427,7 @@ function showPage(name,el){
   if(name==='savings'){loadSavings();loadRecurring();}
 }
 
-/* ◊î◊ï◊°◊§◊î */
+/* הוספה */
 async function addExpense(){
   const desc=document.getElementById('inp-desc').value.trim();
   const amount=parseFloat(document.getElementById('inp-amount').value);
@@ -435,29 +435,29 @@ async function addExpense(){
   const date=document.getElementById('inp-date').value;
   const currency=document.getElementById('inp-currency').value;
   const recurring=document.getElementById('inp-recurring').checked;
-  if(!desc){toast('‚ö†Ô∏è ◊†◊ê ◊ú◊î◊õ◊†◊ô◊° ◊™◊ô◊ê◊ï◊®');return;}
-  if(!amount||amount<=0){toast('‚ö†Ô∏è ◊†◊ê ◊ú◊î◊õ◊†◊ô◊° ◊°◊õ◊ï◊ù ◊™◊ß◊ô◊ü');return;}
+  if(!desc){toast('⚠️ נא להכניס תיאור');return;}
+  if(!amount||amount<=0){toast('⚠️ נא להכניס סכום תקין');return;}
   const btn=document.getElementById('add-btn');
-  btn.textContent='◊©◊ï◊û◊®...';btn.disabled=true;
+  btn.textContent='שומר...';btn.disabled=true;
   const{error}=await sb.from('expenses').insert({
     description:desc,amount,category,paid_by:selectedPayer,
     date,currency,split:selectedSplit,recurring
   });
-  btn.textContent='◊î◊ï◊°◊£ ◊î◊ï◊¶◊ê◊î ‚úì';btn.disabled=false;
-  if(error){toast('‚ùå ◊©◊í◊ô◊ê◊î: '+error.message,3000);return;}
+  btn.textContent='הוסף הוצאה ✓';btn.disabled=false;
+  if(error){toast('❌ שגיאה: '+error.message,3000);return;}
   document.getElementById('inp-desc').value='';
   document.getElementById('inp-amount').value='';
   document.getElementById('inp-date').valueAsDate=new Date();
   document.getElementById('inp-recurring').checked=false;
   loadHeaderData();
-  toast('‚úÖ ◊î◊î◊ï◊¶◊ê◊î ◊†◊©◊û◊®◊î!');
+  toast('✅ ההוצאה נשמרה!');
 }
 
-/* ◊®◊©◊ô◊û◊î */
+/* רשימה */
 async function loadExpenses(){
-  document.getElementById('expenses-list').innerHTML='<div class="loading">‚è≥ ◊ò◊ï◊¢◊ü...</div>';
+  document.getElementById('expenses-list').innerHTML='<div class="loading">⏳ טוען...</div>';
   const{data,error}=await sb.from('expenses').select('*').order('date',{ascending:false});
-  if(error){document.getElementById('expenses-list').innerHTML='<div class="empty">‚ùå ◊©◊í◊ô◊ê◊î ◊ë◊ò◊¢◊ô◊†◊î</div>';return;}
+  if(error){document.getElementById('expenses-list').innerHTML='<div class="empty">❌ שגיאה בטעינה</div>';return;}
   allExpenses=data||[];
   filteredExpenses=[...allExpenses];
   renderList();
@@ -477,23 +477,23 @@ function filterExpenses(){
 function renderList(){
   const el=document.getElementById('expenses-list');
   if(!filteredExpenses.length){
-    el.innerHTML='<div class="empty"><div class="empty-icon">üí∏</div><div>◊ê◊ô◊ü ◊î◊ï◊¶◊ê◊ï◊™ ◊ú◊î◊¶◊í◊î</div><div style="font-size:12px;margin-top:6px">◊î◊ï◊°◊£ ◊î◊ï◊¶◊ê◊î ◊®◊ê◊©◊ï◊†◊î ◊û◊î◊ò◊ê◊ë ◊î◊ï◊°◊£</div></div>';
+    el.innerHTML='<div class="empty"><div class="empty-icon">💸</div><div>אין הוצאות להצגה</div><div style="font-size:12px;margin-top:6px">הוסף הוצאה ראשונה מהטאב הוסף</div></div>';
     return;
   }
   el.innerHTML=filteredExpenses.map(e=>`
     <div class="expense-item">
-      <div class="exp-icon ${e.paid_by==='◊í◊ô◊ê'?'guy':'ben'}">${CAT_ICONS[e.category]||'üì¶'}</div>
+      <div class="exp-icon ${e.paid_by==='גיא'?'guy':'ben'}">${CAT_ICONS[e.category]||'📦'}</div>
       <div class="exp-info">
-        <div class="exp-desc">${e.description}${e.recurring?'<span class="badge badge-rec">üîÑ ◊ó◊ï◊ñ◊®</span>':''}</div>
+        <div class="exp-desc">${e.description}${e.recurring?'<span class="badge badge-rec">🔄 חוזר</span>':''}</div>
         <div class="exp-meta"><span>${formatDate(e.date)}</span><span class="tag">${e.category}</span></div>
       </div>
       <div class="exp-right">
-        <div class="exp-amount" style="color:${e.paid_by==='◊í◊ô◊ê'?'var(--p1)':'var(--p2)'}">${e.currency||'‚Ç™'}${Number(e.amount).toFixed(2)}</div>
+        <div class="exp-amount" style="color:${e.paid_by==='גיא'?'var(--p1)':'var(--p2)'}">${e.currency||'₪'}${Number(e.amount).toFixed(2)}</div>
         <div class="exp-payer">${e.paid_by}</div>
       </div>
       <div class="exp-actions">
-        <button class="icon-btn edit-btn" onclick="openEdit(${e.id})" title="◊¢◊®◊ô◊õ◊î">‚úèÔ∏è</button>
-        <button class="icon-btn del" onclick="deleteExpense(${e.id})" title="◊û◊ó◊ô◊ß◊î">‚úï</button>
+        <button class="icon-btn edit-btn" onclick="openEdit(${e.id})" title="עריכה">✏️</button>
+        <button class="icon-btn del" onclick="deleteExpense(${e.id})" title="מחיקה">✕</button>
       </div>
     </div>`).join('');
 }
@@ -505,24 +505,24 @@ function formatDate(d){
 }
 
 async function deleteExpense(id){
-  if(!confirm('◊ú◊û◊ó◊ï◊ß ◊î◊ï◊¶◊ê◊î ◊ñ◊ï?'))return;
+  if(!confirm('למחוק הוצאה זו?'))return;
   await sb.from('expenses').delete().eq('id',id);
   allExpenses=allExpenses.filter(e=>e.id!==id);
   filteredExpenses=filteredExpenses.filter(e=>e.id!==id);
   renderList();
   loadHeaderData();
-  toast('üóëÔ∏è ◊î◊ï◊¶◊ê◊î ◊†◊û◊ó◊ß◊î');
+  toast('🗑️ הוצאה נמחקה');
 }
 
 /* edit */
 function openEdit(id){
   const e=allExpenses.find(x=>x.id===id);
   if(!e)return;
-  editPayer=e.paid_by||'◊í◊ô◊ê';
+  editPayer=e.paid_by||'גיא';
   document.getElementById('edit-id').value=id;
   document.getElementById('edit-desc').value=e.description;
   document.getElementById('edit-amount').value=e.amount;
-  document.getElementById('edit-currency').value=e.currency||'‚Ç™';
+  document.getElementById('edit-currency').value=e.currency||'₪';
   document.getElementById('edit-cat').value=e.category;
   document.getElementById('edit-date').value=e.date;
   selectEditPayer(editPayer);
@@ -531,8 +531,8 @@ function openEdit(id){
 
 function selectEditPayer(name){
   editPayer=name;
-  document.getElementById('edit-btn-guy').className='pb'+(name==='◊í◊ô◊ê'?' sel-guy':'');
-  document.getElementById('edit-btn-ben').className='pb'+(name==='◊ë◊ü'?' sel-ben':'');
+  document.getElementById('edit-btn-guy').className='pb'+(name==='גיא'?' sel-guy':'');
+  document.getElementById('edit-btn-ben').className='pb'+(name==='בן'?' sel-ben':'');
 }
 
 function closeEdit(){
@@ -550,30 +550,30 @@ async function saveEdit(){
   const currency=document.getElementById('edit-currency').value;
   const category=document.getElementById('edit-cat').value;
   const date=document.getElementById('edit-date').value;
-  if(!desc||!amount){toast('‚ö†Ô∏è ◊û◊ú◊ê ◊ê◊™ ◊õ◊ú ◊î◊©◊ì◊ï◊™');return;}
+  if(!desc||!amount){toast('⚠️ מלא את כל השדות');return;}
   const{error}=await sb.from('expenses').update({description:desc,amount,currency,category,date,paid_by:editPayer}).eq('id',id);
-  if(error){toast('‚ùå ◊©◊í◊ô◊ê◊î ◊ë◊©◊û◊ô◊®◊î');return;}
+  if(error){toast('❌ שגיאה בשמירה');return;}
   closeEdit();
   loadExpenses();
   loadHeaderData();
-  toast('‚úÖ ◊î◊ï◊¶◊ê◊î ◊¢◊ï◊ì◊õ◊†◊î!');
+  toast('✅ הוצאה עודכנה!');
 }
 
-/* ◊ô◊ô◊¶◊ï◊ê */
+/* ייצוא */
 async function exportCSV(){
   const{data}=await sb.from('expenses').select('*').order('date',{ascending:false});
-  if(!data?.length){toast('◊ê◊ô◊ü ◊†◊™◊ï◊†◊ô◊ù ◊ú◊ô◊ô◊¶◊ï◊ê');return;}
-  const rows=[['◊™◊ê◊®◊ô◊ö','◊™◊ô◊ê◊ï◊®','◊ß◊ò◊í◊ï◊®◊ô◊î','◊û◊©◊ú◊ù','◊°◊õ◊ï◊ù','◊û◊ò◊ë◊¢','◊§◊ô◊¶◊ï◊ú%','◊ó◊ï◊ñ◊®']];
-  data.forEach(e=>rows.push([e.date,e.description,e.category,e.paid_by,e.amount,e.currency||'‚Ç™',e.split||50,e.recurring?'◊õ◊ü':'◊ú◊ê']));
-  const csv='Ôªø'+rows.map(r=>r.join(',')).join('\n');
+  if(!data?.length){toast('אין נתונים לייצוא');return;}
+  const rows=[['תאריך','תיאור','קטגוריה','משלם','סכום','מטבע','פיצול%','חוזר']];
+  data.forEach(e=>rows.push([e.date,e.description,e.category,e.paid_by,e.amount,e.currency||'₪',e.split||50,e.recurring?'כן':'לא']));
+  const csv='﻿'+rows.map(r=>r.join(',')).join('\n');
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
-  a.download='◊î◊ï◊¶◊ê◊ï◊™.csv';
+  a.download='הוצאות.csv';
   a.click();
-  toast('üì• ◊û◊ô◊ô◊¶◊ê...');
+  toast('📥 מייצא...');
 }
 
-/* ◊ô◊™◊®◊î */
+/* יתרה */
 async function loadBalance(){
   const{data}=await sb.from('expenses').select('*');
   allExpenses=data||[];
@@ -581,8 +581,8 @@ async function loadBalance(){
   allExpenses.forEach(e=>{
     const split=(e.split||50)/100;
     const amt=Number(e.amount);
-    if(e.paid_by==='◊í◊ô◊ê'){
-      // guy paid ‚Äî ben owes guy his share
+    if(e.paid_by==='גיא'){
+      // guy paid — ben owes guy his share
       benOwes+=amt*(1-split);
       guyOwes+=amt*split; // guy's own share (already paid)
     } else {
@@ -591,21 +591,21 @@ async function loadBalance(){
     }
   });
   const total=allExpenses.reduce((s,e)=>s+Number(e.amount),0);
-  const guyPaid=allExpenses.filter(e=>e.paid_by==='◊í◊ô◊ê').reduce((s,e)=>s+Number(e.amount),0);
-  const benPaid=allExpenses.filter(e=>e.paid_by==='◊ë◊ü').reduce((s,e)=>s+Number(e.amount),0);
+  const guyPaid=allExpenses.filter(e=>e.paid_by==='גיא').reduce((s,e)=>s+Number(e.amount),0);
+  const benPaid=allExpenses.filter(e=>e.paid_by==='בן').reduce((s,e)=>s+Number(e.amount),0);
   // diff: positive = ben owes guy, negative = guy owes ben
   const diff=guyPaid-guyOwes-(benPaid-benOwes);
   const absDiff=Math.abs(diff);
   const score=total>0?Math.max(0,Math.round(100-(absDiff/total)*100)):100;
   const scoreColor=score>=80?'#16A34A':score>=50?'#D97706':'#DC2626';
   const{data:last}=await sb.from('expenses').select('paid_by').order('created_at',{ascending:false}).limit(1);
-  const turnName=last?.length?(last[0].paid_by==='◊í◊ô◊ê'?'◊ë◊ü':'◊í◊ô◊ê'):'◊í◊ô◊ê';
-  document.getElementById('turn-header').textContent='◊™◊ï◊® '+turnName;
+  const turnName=last?.length?(last[0].paid_by==='גיא'?'בן':'גיא'):'גיא';
+  document.getElementById('turn-header').textContent='תור '+turnName;
   let heroClass,heroLabel,heroAmount,heroSub;
-  if(total===0){heroClass='bh-gray';heroLabel='◊ê◊ô◊ü ◊î◊ï◊¶◊ê◊ï◊™ ◊¢◊ì◊ô◊ô◊ü';heroAmount='‚Ç™0';heroSub='◊î◊ï◊°◊£ ◊î◊ï◊¶◊ê◊î ◊®◊ê◊©◊ï◊†◊î!';}
-  else if(absDiff<0.01){heroClass='bh-green';heroLabel='◊û◊ê◊ï◊ñ◊ü ◊ú◊ó◊ú◊ï◊ò◊ô◊ü ‚öñÔ∏è';heroAmount='üëè';heroSub='◊©◊†◊ô◊õ◊ù ◊©◊ï◊ï◊î ◊ë◊©◊ï◊ï◊î';}
-  else if(diff>0){heroClass='bh-blue';heroLabel='◊ë◊ü ◊ó◊ô◊ô◊ë ◊ú◊í◊ô◊ê';heroAmount='‚Ç™'+absDiff.toFixed(2);heroSub='◊ú◊ê◊ô◊ñ◊ï◊ü ◊û◊ú◊ê';}
-  else{heroClass='bh-blue';heroLabel='◊í◊ô◊ê ◊ó◊ô◊ô◊ë ◊ú◊ë◊ü';heroAmount='‚Ç™'+absDiff.toFixed(2);heroSub='◊ú◊ê◊ô◊ñ◊ï◊ü ◊û◊ú◊ê';}
+  if(total===0){heroClass='bh-gray';heroLabel='אין הוצאות עדיין';heroAmount='₪0';heroSub='הוסף הוצאה ראשונה!';}
+  else if(absDiff<0.01){heroClass='bh-green';heroLabel='מאוזן לחלוטין ⚖️';heroAmount='👏';heroSub='שניכם שווה בשווה';}
+  else if(diff>0){heroClass='bh-blue';heroLabel='בן חייב לגיא';heroAmount='₪'+absDiff.toFixed(2);heroSub='לאיזון מלא';}
+  else{heroClass='bh-blue';heroLabel='גיא חייב לבן';heroAmount='₪'+absDiff.toFixed(2);heroSub='לאיזון מלא';}
 
   document.getElementById('balance-display').innerHTML=`
     <div class="balance-hero ${heroClass}">
@@ -614,40 +614,40 @@ async function loadBalance(){
       <div class="bh-sub">${heroSub}</div>
     </div>
     <div class="turn-card">
-      <div class="turn-icon">üí≥</div>
-      <div><div class="turn-text">◊™◊ï◊® ◊û◊ô ◊ú◊©◊ú◊ù ◊î◊§◊¢◊ù?</div><div class="turn-name">${turnName}</div></div>
+      <div class="turn-icon">💳</div>
+      <div><div class="turn-text">תור מי לשלם הפעם?</div><div class="turn-name">${turnName}</div></div>
     </div>
     <div class="card">
-      <div class="card-title">◊¶◊ô◊ï◊ü ◊©◊ô◊™◊ï◊£</div>
+      <div class="card-title">ציון שיתוף</div>
       <div class="score-row">
         <div class="score-ring" style="color:${scoreColor};border-color:${scoreColor}">${score}</div>
         <div>
-          <div style="font-size:15px;font-weight:700">${score>=80?'◊û◊ê◊ï◊ñ◊ü ◊û◊¢◊ï◊ú◊î üèÜ':score>=50?'◊°◊ë◊ô◊®, ◊ê◊§◊©◊® ◊ò◊ï◊ë ◊ô◊ï◊™◊® üìä':'◊ú◊ê ◊û◊ê◊ï◊ñ◊ü ‚ö†Ô∏è'}</div>
-          <div style="font-size:13px;color:var(--sub);margin-top:2px">${score>=80?'◊õ◊ú ◊î◊õ◊ë◊ï◊ì! ◊†◊ô◊î◊ï◊ú ◊û◊¶◊ï◊ô◊ü':'◊õ◊ì◊ê◊ô ◊ú◊ê◊ñ◊ü ◊ê◊™ ◊î◊î◊ï◊¶◊ê◊ï◊™'}</div>
+          <div style="font-size:15px;font-weight:700">${score>=80?'מאוזן מעולה 🏆':score>=50?'סביר, אפשר טוב יותר 📊':'לא מאוזן ⚠️'}</div>
+          <div style="font-size:13px;color:var(--sub);margin-top:2px">${score>=80?'כל הכבוד! ניהול מצוין':'כדאי לאזן את ההוצאות'}</div>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-title">◊§◊ô◊®◊ï◊ò</div>
-      <div class="stat-row"><span class="stat-label">◊°◊î"◊õ ◊î◊ï◊¶◊ê◊ï◊™</span><span class="stat-value">‚Ç™${total.toFixed(2)}</span></div>
-      <div class="stat-row"><span class="stat-label">üë® ◊í◊ô◊ê ◊©◊ô◊ú◊ù</span><span class="stat-value" style="color:var(--p1)">‚Ç™${guyPaid.toFixed(2)}</span></div>
-      <div class="stat-row"><span class="stat-label">üë¶ ◊ë◊ü ◊©◊ô◊ú◊ù</span><span class="stat-value" style="color:var(--p2)">‚Ç™${benPaid.toFixed(2)}</span></div>
-      <div class="stat-row"><span class="stat-label">◊û◊°◊§◊® ◊î◊ï◊¶◊ê◊ï◊™</span><span class="stat-value">${allExpenses.length}</span></div>
+      <div class="card-title">פירוט</div>
+      <div class="stat-row"><span class="stat-label">סה"כ הוצאות</span><span class="stat-value">₪${total.toFixed(2)}</span></div>
+      <div class="stat-row"><span class="stat-label">👨 גיא שילם</span><span class="stat-value" style="color:var(--p1)">₪${guyPaid.toFixed(2)}</span></div>
+      <div class="stat-row"><span class="stat-label">👦 בן שילם</span><span class="stat-value" style="color:var(--p2)">₪${benPaid.toFixed(2)}</span></div>
+      <div class="stat-row"><span class="stat-label">מספר הוצאות</span><span class="stat-value">${allExpenses.length}</span></div>
     </div>`;
 }
 
-/* ◊†◊ô◊™◊ï◊ó */
+/* ניתוח */
 async function loadStats(){
   const{data}=await sb.from('expenses').select('*');
   allExpenses=data||[];
   if(!allExpenses.length){
-    document.getElementById('insights-content').innerHTML='<div class="empty"><div class="empty-icon">üìä</div>◊ê◊ô◊ü ◊†◊™◊ï◊†◊ô◊ù ◊¢◊ì◊ô◊ô◊ü</div>';
+    document.getElementById('insights-content').innerHTML='<div class="empty"><div class="empty-icon">📊</div>אין נתונים עדיין</div>';
     return;
   }
   const monthMap={};
   allExpenses.forEach(e=>{
     const m=e.date?e.date.substring(0,7):'?';
-    if(!monthMap[m]) monthMap[m]={◊í◊ô◊ê:0,◊ë◊ü:0};
+    if(!monthMap[m]) monthMap[m]={גיא:0,בן:0};
     monthMap[m][e.paid_by]=(monthMap[m][e.paid_by]||0)+Number(e.amount);
   });
   const months=Object.keys(monthMap).sort().slice(-5);
@@ -655,8 +655,8 @@ async function loadStats(){
   monthlyChart=new Chart(document.getElementById('chart-monthly'),{
     type:'bar',
     data:{labels:months.map(m=>m.replace('-','/')),datasets:[
-      {label:'◊í◊ô◊ê',data:months.map(m=>monthMap[m]?.◊í◊ô◊ê||0),backgroundColor:'#2563EB',borderRadius:8},
-      {label:'◊ë◊ü',data:months.map(m=>monthMap[m]?.◊ë◊ü||0),backgroundColor:'#7C3AED',borderRadius:8}
+      {label:'גיא',data:months.map(m=>monthMap[m]?.גיא||0),backgroundColor:'#2563EB',borderRadius:8},
+      {label:'בן',data:months.map(m=>monthMap[m]?.בן||0),backgroundColor:'#7C3AED',borderRadius:8}
     ]},
     options:{plugins:{legend:{labels:{color:'#0F172A',font:{size:12,family:'Rubik'}}}},
       scales:{x:{ticks:{color:'#64748B',font:{family:'Rubik'}}},y:{ticks:{color:'#64748B',font:{family:'Rubik'}}}},
@@ -682,16 +682,16 @@ async function loadStats(){
   const insights=[];
   if(lastTotal>0){
     const p=((thisTotal-lastTotal)/lastTotal*100).toFixed(0);
-    insights.push({icon:p>0?'üìà':'üìâ',text:p>0?`◊î◊ï◊¶◊ê◊ï◊™ ◊î◊ó◊ï◊ì◊© ◊í◊ë◊ï◊î◊ï◊™ ◊ë-${Math.abs(p)}% ◊û◊ó◊ï◊ì◊© ◊©◊¢◊ë◊®`:`◊î◊ï◊¶◊ê◊ï◊™ ◊î◊ó◊ï◊ì◊© ◊†◊û◊ï◊õ◊ï◊™ ◊ë-${Math.abs(p)}% ◊û◊ó◊ï◊ì◊© ◊©◊¢◊ë◊® ‚Äî ◊õ◊ú ◊î◊õ◊ë◊ï◊ì! üéâ`});
+    insights.push({icon:p>0?'📈':'📉',text:p>0?`הוצאות החודש גבוהות ב-${Math.abs(p)}% מחודש שעבר`:`הוצאות החודש נמוכות ב-${Math.abs(p)}% מחודש שעבר — כל הכבוד! 🎉`});
   }
-  if(topCat) insights.push({icon:'üèÜ',text:`◊î◊ß◊ò◊í◊ï◊®◊ô◊î ◊¢◊ù ◊î◊õ◊ô ◊î◊®◊ë◊î ◊î◊ï◊¶◊ê◊ï◊™: ${topCat[0]} ‚Äî ‚Ç™${topCat[1].toFixed(0)}`});
-  if(biggest) insights.push({icon:'üí∏',text:`◊î◊î◊ï◊¶◊ê◊î ◊î◊í◊ì◊ï◊ú◊î ◊ë◊ô◊ï◊™◊®: "${biggest.description}" ‚Äî ${biggest.currency||'‚Ç™'}${Number(biggest.amount).toFixed(2)} (${biggest.paid_by})`});
-  insights.push({icon:'üìå',text:`◊û◊û◊ï◊¶◊¢ ◊î◊ï◊¶◊ê◊î: ‚Ç™${avg.toFixed(2)} ◊û◊™◊ï◊ö ${allExpenses.length} ◊î◊ï◊¶◊ê◊ï◊™`});
+  if(topCat) insights.push({icon:'🏆',text:`הקטגוריה עם הכי הרבה הוצאות: ${topCat[0]} — ₪${topCat[1].toFixed(0)}`});
+  if(biggest) insights.push({icon:'💸',text:`ההוצאה הגדולה ביותר: "${biggest.description}" — ${biggest.currency||'₪'}${Number(biggest.amount).toFixed(2)} (${biggest.paid_by})`});
+  insights.push({icon:'📌',text:`ממוצע הוצאה: ₪${avg.toFixed(2)} מתוך ${allExpenses.length} הוצאות`});
   document.getElementById('insights-content').innerHTML=insights.map(i=>`
     <div class="insight"><div class="ins-icon">${i.icon}</div><div class="ins-text">${i.text}</div></div>`).join('');
 }
 
-/* ◊ó◊ô◊°◊õ◊ï◊ü */
+/* חיסכון */
 function loadSavings(){
   const goal=JSON.parse(localStorage.getItem('savings_goal')||'null');
   if(!goal)return;
@@ -707,10 +707,10 @@ function saveSavingsGoal(){
     target:parseFloat(document.getElementById('goal-target').value)||0,
     saved:parseFloat(document.getElementById('goal-saved').value)||0
   };
-  if(!goal.name||!goal.target){toast('‚ö†Ô∏è ◊î◊õ◊†◊° ◊©◊ù ◊ï◊°◊õ◊ï◊ù ◊ô◊¢◊ì');return;}
+  if(!goal.name||!goal.target){toast('⚠️ הכנס שם וסכום יעד');return;}
   localStorage.setItem('savings_goal',JSON.stringify(goal));
   renderSavings(goal);
-  toast('‚úÖ ◊ô◊¢◊ì ◊†◊©◊û◊®!');
+  toast('✅ יעד נשמר!');
 }
 
 function renderSavings(goal){
@@ -720,13 +720,13 @@ function renderSavings(goal){
       <div style="font-size:18px;font-weight:700;margin-bottom:6px">${goal.name}</div>
       <div class="prog-bg"><div class="prog-fill" style="width:${pct.toFixed(1)}%"></div></div>
       <div class="prog-labels">
-        <span>‚Ç™${Number(goal.saved).toFixed(0)} ◊ó◊°◊õ◊†◊ï</span>
+        <span>₪${Number(goal.saved).toFixed(0)} חסכנו</span>
         <span style="font-weight:700">${pct.toFixed(0)}%</span>
-        <span>◊ô◊¢◊ì: ‚Ç™${Number(goal.target).toFixed(0)}</span>
+        <span>יעד: ₪${Number(goal.target).toFixed(0)}</span>
       </div>
       ${pct>=100
-        ?'<div style="text-align:center;font-size:20px;margin-top:14px;color:var(--green);font-weight:700">üéâ ◊î◊í◊¢◊™◊ù ◊ú◊ô◊¢◊ì! ◊û◊ñ◊ú ◊ò◊ï◊ë!</div>'
-        :`<div style="text-align:center;font-size:13px;color:var(--sub);margin-top:10px">◊†◊©◊ê◊® ◊¢◊ï◊ì ‚Ç™${(goal.target-goal.saved).toFixed(0)} ◊ú◊î◊©◊ú◊û◊™ ◊î◊ô◊¢◊ì</div>`}
+        ?'<div style="text-align:center;font-size:20px;margin-top:14px;color:var(--green);font-weight:700">🎉 הגעתם ליעד! מזל טוב!</div>'
+        :`<div style="text-align:center;font-size:13px;color:var(--sub);margin-top:10px">נשאר עוד ₪${(goal.target-goal.saved).toFixed(0)} להשלמת היעד</div>`}
     </div>`;
 }
 
@@ -734,19 +734,19 @@ async function loadRecurring(){
   const{data}=await sb.from('expenses').select('*').eq('recurring',true).order('date',{ascending:false});
   const el=document.getElementById('recurring-list');
   if(!data?.length){
-    el.innerHTML='<div class="empty"><div class="empty-icon">üîÑ</div>◊ê◊ô◊ü ◊î◊ï◊¶◊ê◊ï◊™ ◊ó◊ï◊ñ◊®◊ï◊™<div style="font-size:12px;margin-top:6px">◊°◊û◊ü "◊î◊ï◊¶◊ê◊î ◊ó◊ï◊ñ◊®◊™" ◊ë◊¢◊™ ◊î◊ï◊°◊§◊î</div></div>';
+    el.innerHTML='<div class="empty"><div class="empty-icon">🔄</div>אין הוצאות חוזרות<div style="font-size:12px;margin-top:6px">סמן "הוצאה חוזרת" בעת הוספה</div></div>';
     return;
   }
   el.innerHTML=data.map(e=>`
     <div class="rec-item">
       <div style="display:flex;gap:10px;align-items:center;">
-        <div style="font-size:22px">${CAT_ICONS[e.category]||'üì¶'}</div>
+        <div style="font-size:22px">${CAT_ICONS[e.category]||'📦'}</div>
         <div>
           <div style="font-size:14px;font-weight:600">${e.description}</div>
-          <div style="font-size:12px;color:var(--sub)">${e.category} ¬∑ ${e.paid_by}</div>
+          <div style="font-size:12px;color:var(--sub)">${e.category} · ${e.paid_by}</div>
         </div>
       </div>
-      <div style="font-weight:700;color:var(--p1)">${e.currency||'‚Ç™'}${Number(e.amount).toFixed(2)}</div>
+      <div style="font-weight:700;color:var(--p1)">${e.currency||'₪'}${Number(e.amount).toFixed(2)}</div>
     </div>`).join('');
 }
 </script>
